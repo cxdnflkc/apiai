@@ -9,4 +9,4 @@ ENV LLAMA_API_KEY="sk-senin"
 ENV LLAMA_ARG_PORT=8080
 
 # Sadece argümanları yaz (entrypoint zaten llama-server)
-CMD ["-m", "/models/next2-0.8b.gguf", "--host", "0.0.0.0"]
+CMD ["-m", "/models/next2-0.8b.gguf", "--host", "0.0.0.0", "-c", "512", "--no-mmap"]
