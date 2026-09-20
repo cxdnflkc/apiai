@@ -1,10 +1,7 @@
 FROM ghcr.io/ggml-org/llama.cpp:server
 
-# wget'i kur
-RUN apt-get update && apt-get install -y wget
-
-# Modeli indir
-RUN mkdir -p /models && wget -O /models/next2-0.8b.gguf https://huggingface.co/thelamapi/next2-0.8b-GGUF/resolve/main/next2-0.8b-Q4_K_M.gguf
+# Modeli curl ile indir (doğru dosya adı)
+RUN mkdir -p /models && curl -L -o /models/next2-0.8b.gguf "https://huggingface.co/thelamapi/next2-0.8b-GGUF/resolve/main/next2-0.8b.IQ4_XS.gguf"
 
 ENV API_KEY="sk-senin-anahtarin-buraya"
 
